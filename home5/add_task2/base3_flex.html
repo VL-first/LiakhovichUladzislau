@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>base3_flex</title>
+    <style>
+        .flex-container-column {
+			display: flex;
+			flex-direction: column;
+            }
+        .flex-container-row {
+			display: flex;
+			flex-direction: row;
+		}
+        .flex-container-row > .menu {
+			flex: 0 0 15em;
+				/*базовая ширина 200px, 0 - при росте/сужении не растём  */
+			}
+		.flex-container-row > .main_content {
+			flex: 1 1 500px;
+				/*базовая ширина 500px, 1 - при росте/сужении не растём  */
+			/*
+			.nav .main_content - эти два контейнера размещены в одном flex контейнере (.flex-container-row) и они имеют 
+            соответственно 200px и 500px базовую ширину, оставшееся место будут делить в пропроции 0:1 при росте и при
+            сужении матринского flex контейнера (первые две цифры в занчении flex у каждого из них - это и есть
+            "скорость" дележа свободного места). 
+			*/
+			}
+        .wrap {
+            background-color: rgb(233, 227, 227);
+        }  
+        .menu {
+            /*width: 15em;*/
+            background-color: rgb(175, 175, 175);
+            padding-top: 1px;
+            margin-bottom: .2em;
+            /*float: left;*/
+        }
+        .article {
+            background-color: rgb(140, 140, 140);
+            margin-bottom: .2em; 
+            padding-top: 1px;
+            /*margin-left: 240px;*/
+        }
+        p {
+            text-align: right;
+            margin-bottom: .2em;
+        }
+        .footer {
+            background-color: rgb(140, 140, 140);
+        }
+        /*.clear{
+            clear: both;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="wrap" class="flex-container-column">
+        <div class="flex-container-row">
+            <div class="menu">
+               <h2>Блок навигации</h2>
+               <ul>
+                   <li>Ширина 15em</li>
+                    <li>Должен присутствовать цвет фона</li>
+                   <li>Располагается слева</li>
+                   <li>Блок навигации наполните контентом достаточным, чтобы по высоте он начинал захватывать вторую статью, как показано на данном примере</li>
+               </ul>
+            </div>
+            <div class="main_content">
+                <div class="article">
+                  <h2>Статья 1</h2>
+                  Размер блока: <br>
+                  Занимает всю доступную ширину <br>
+                  Должен присутствовать цвет фона <br>
+                  Во всех "статьях" сделайте отступ снизу от соседней равным .2em, при помощи <br>
+                  свойства margin-bottom
+                </div>
+                <div class="article">
+                  <h2>Статья 2</h2>
+                  Размер блока: <br>
+                  Занимает всю доступную ширину <br>
+                  Должен присутствовать цвет фона <br>
+                  Во всех "статьях" сделайте отступ снизу от соседней равным .2em, при помощи <br>
+                  свойства margin-bottom. Картинка вставлена при помощи тега, плавание<br>
+                  организованно по правому краю внутри данной статьи для этой картинки. <br>
+                  <p><img src="icon_mail.png" alt="image"></p>
+                </div>
+            </div>
+            <!--<div class="clear"></div>-->
+        </div>
+        <div class="footer" class="flex-container-row">
+              Нижний блок, подвал. Занимает всю доступную ширину. Высота определяется помещённым внутрь контентом.
+        </div>
+    </div>
+</body>
+</html>

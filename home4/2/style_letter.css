@@ -1,0 +1,18 @@
+.right {
+    text-align: right;
+}
+p span{
+    font-style: italic;
+}
+.weight {
+    font-weight: 600;
+}
+h3, div{
+    font-family: 'Bad Script', cursive;
+}
+.decor{
+    text-decoration: underline;
+}
+h3, div p{
+    text-indent: 5mm;
+}
